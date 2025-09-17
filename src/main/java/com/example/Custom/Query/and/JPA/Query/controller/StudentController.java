@@ -47,19 +47,18 @@ public class StudentController {
         return "Updated Student";
     }
 
-    // JPA Query Example
+    // JPA Query
     @GetMapping("/byEmail")
     public Student getByEmail(@RequestParam String email) {
         return studentRepo.findByEmail(email);
     }
 
-    // Custom JPQL Query Example
+    // Custom JPQL Query
     @GetMapping("/byDomain")
     public List<Student> getByDomain(@RequestParam String domain) {
         return studentRepo.getStudentsByEmailDomain(domain);
     }
 
-    // Native SQL Example
     @GetMapping("/search")
     public List<Student> searchByName(@RequestParam String name) {
         return studentRepo.searchByNameNative(name);
